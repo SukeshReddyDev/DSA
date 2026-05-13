@@ -15,7 +15,7 @@ public class armstrong{
             count++;
             temp2 = temp2 / 10;
         }
-
+        
         while(num > 0){
 
             int rem = num % 10;
