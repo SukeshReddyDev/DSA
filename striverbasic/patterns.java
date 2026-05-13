@@ -4,6 +4,7 @@ public class patterns{
         pattern2(5);
         pattern3(4);
         pattern4(5);
+        pattern5(4);
         
     }
 
@@ -39,6 +40,15 @@ public class patterns{
         for(int row = 1;row<=n;row++){
             for(int col=1;col<=row;col++){
                 System.out.print(row+" ");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern5(int n){
+        for(int row = 1;row<=n;row++){
+            for(int col= n;col>=row;col--){
+                System.out.print("*"+" ");
             }
             System.out.println();
         }
