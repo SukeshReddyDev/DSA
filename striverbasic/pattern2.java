@@ -1,6 +1,7 @@
 public class pattern2{
     public static void main(String[] args) {
         pattern15(5);
+        pattern16(5);
         
     }
 
@@ -12,6 +13,17 @@ public class pattern2{
                 ch ++;
             }
             ch='A';
+            System.out.println();
+        }
+    }
+
+    static void pattern16(int n){
+        char ch = 'A';
+        for(int row = 1;row <= n;row++){
+            for(int col = 1 ;col<=row;col++){
+                System.out.print(ch+ " ");
+            }
+            ch++;
             System.out.println();
         }
     }
