@@ -5,6 +5,7 @@ public class pattern1{
         pattern10(5);
         pattern11(5);
         pattern12(5);
+        pattern13(5);
         
     }
 
@@ -84,6 +85,17 @@ public class pattern1{
                 System.out.print(col);
             }
 
+            System.out.println();
+        }
+    }
+
+    static void pattern13(int n){
+        int digit = 1;
+        for(int row = 1;row <= n;row++){
+            for(int col = 1;col<=row;col++){
+                System.out.print(digit + " ");
+                digit ++;
+            }
             System.out.println();
         }
     }
