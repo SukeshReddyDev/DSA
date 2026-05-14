@@ -2,6 +2,7 @@ public class pattern1{
     public static void main(String[] args) {
         pattern7(5);
         pattern8(5);
+        pattern10(5);
         
     }
 
@@ -31,4 +32,18 @@ public class pattern1{
             System.out.println();
         }
     }
+
+    // Pattern 9 is combination of both 7 and 8 
+
+    static void pattern10(int n){
+        
+        for(int row =1;row<=2*n-1;row++){
+            int col_to = row>n?(2*n-row):row;
+            for(int col = 1; col <=col_to;col++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+    } 
 }
