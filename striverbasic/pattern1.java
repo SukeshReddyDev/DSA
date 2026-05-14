@@ -3,6 +3,8 @@ public class pattern1{
         pattern7(5);
         pattern8(5);
         pattern10(5);
+        pattern11(5);
+        pattern12(5);
         
     }
 
@@ -46,4 +48,43 @@ public class pattern1{
         }
         
     } 
+
+    static void pattern11(int n){
+        for(int row = 1; row <=n;row++){
+            int digit;
+            if(row%2==0){
+                digit = 0;
+            }
+            else{
+                digit =1;
+            }
+            for(int col = 1; col <=row;col++){
+                System.out.print(digit+" ");
+                digit = 1-digit;
+            }
+        }
+    }
+
+    static void pattern12(int n){
+
+        for(int row = 1; row <= n; row++){
+
+            // Left increasing numbers
+            for(int col = 1; col <= row; col++){
+                System.out.print(col);
+            }
+
+            // Spaces
+            for(int s = 1; s <= ((2*n) - (2*row)); s++){
+                System.out.print(" ");
+            }
+
+            // Right decreasing numbers
+            for(int col = row; col >= 1; col--){
+                System.out.print(col);
+            }
+
+            System.out.println();
+        }
+    }
 }
