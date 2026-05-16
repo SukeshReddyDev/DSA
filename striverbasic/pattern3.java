@@ -1,6 +1,8 @@
 public class pattern3{
     public static void main(String[] args) {
         pattern18(5);
+        pattern19(5);
+        pattern191(5);
     }
 
     static void pattern18(int n){
@@ -13,6 +15,35 @@ public class pattern3{
             }
             System.out.println();
         }
+    }
+
+    static void pattern19(int n){
+        for(int row = 1;row<=n;row++){
+            for(int col = n;col>=row;col--){
+                System.out.print("*");
+            }
+            for(int s=1;s<=(2*row)-2;s++){
+                System.out.print(" ");
+            }
+            for(int col = n;col>=row;col--){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+    static void pattern191(int n){
+       for(int row = 1;row<=n;row++){
+           for(int col =1 ;col<=row;col++){
+               System.out.print("*");
+           }
+           for(int s = 1;s<=((2*n)-(2*row));s++){
+               System.out.print(" ");
+           }
+           for(int col =1 ;col<=row;col++){
+               System.out.print("*");
+           }
+           System.out.println();
+       } 
     }
 
 }
