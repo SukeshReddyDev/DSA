@@ -4,6 +4,7 @@ public class pattern3{
         pattern19(5);
         pattern191(5);
         pattern20(5);
+        pattern21(5);
     }
 
     static void pattern18(int n){
@@ -62,6 +63,22 @@ public class pattern3{
             }
             System.out.println();
         }
+    }
+
+    static void pattern21(int n){
+        for(int row = 1;row<=n;row++){
+            for (int col = 1;col<=n;col++){
+                if(row==1 || row ==n || col==1 || col==n){
+                    System.out.print("*");
+                }
+                else{
+                    System.out.print(" ");
+                }
+
+            }
+            System.out.println();
+        }
+
     }
 
 }
