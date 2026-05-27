@@ -1,6 +1,6 @@
 
 import java.util.*;
-class Main {
+class lrotby1{
     public static void main(String[] args) {
         int[] nums = {-1,0,3,6};
         rotate(nums);
