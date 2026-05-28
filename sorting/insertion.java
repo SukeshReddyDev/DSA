@@ -15,7 +15,7 @@ class Insertion{
                     arr[j-1] = temp;
                 }
                 else{
-                    break;
+                    break; 
                 }
             }
         }
