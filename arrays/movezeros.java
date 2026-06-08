@@ -30,7 +30,7 @@ class Main {
 // optimized approach
 
 
-class Main {
+/*class Main {
     public static void main(String[] args) {
         int[] nums = {1,0,2,0,3,0,4,5,6,7};
         swap(nums);
