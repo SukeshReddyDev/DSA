@@ -2,7 +2,7 @@
 
 
 import java.util.*;
-class Main {
+class union {
     public static void main(String[] args) {
         int[] n1 = {1,2,3,4};
         int[] n2  = {1,2,3,6,7,8};
