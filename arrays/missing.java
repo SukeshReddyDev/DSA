@@ -24,7 +24,7 @@ class Main {
 // brute force solution
 
 
-class Main {
+/*class Main {
     public static void main(String[] args) {
         int[] nums = {2,1,3,4,5};
         int ans = missing(nums);
