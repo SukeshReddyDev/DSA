@@ -27,4 +27,39 @@ class Main {
         }
         return -1;
     }
+
+}
+/*  
+// optimal Solution
+
+static int once1(int[] nums){
+        int xor =0;
+        for(int num :nums){
+            xor = xor^num;
+        }
+        return xor;
+    }
+
+
+
+    // better Solution
+
+    static int once2(int[] nums){
+        int max = nums[0];
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]>max){
+                max = nums[i];
+            }
+        }
+        int[] hash = new int[max+1];
+        for(int i=0;i<nums.length;i++){
+            hash[nums[i]]++;
+        }
+        for(int i=0;i<nums.length;i++){
+            if(hash[nums[i]]==1){
+                return nums[i];
+            }
+        }
+        return -1;
+    }
 }
