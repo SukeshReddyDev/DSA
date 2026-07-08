@@ -52,5 +52,27 @@ public class longpos {
         return maxlen;
 
     }
+
+    static int longest8(int[] nums, int k) {
+      int l=0;
+      int r=0;
+      int sum=0;
+      int maxlen=0;
+      while(r<nums.length){
+          sum = sum+nums[r];
+          if(sum==k){
+              maxlen = Math.max(maxlen,r-l+1);
+
+          }
+          r++;
+          while(sum > k){
+              sum = sum - nums[l];
+              l++;
+          }
+
+      }
+      return maxlen;
+
+    }
 }
 
