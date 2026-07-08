@@ -1,5 +1,5 @@
 // Brute force 
-
+import java.util.*;
 public class longpos {
 
     public static void main(String[] args) {
@@ -28,4 +28,29 @@ public class longpos {
 
         return len;
     }
+
+    // optimal for negatives better for positives
+    static int longest1(int[] nums, int k) {
+        HashMap<Integer,Integer> map = new HashMap<>();
+        int sum = 0;
+        int maxlen=0;
+        for(int i=0;i<nums.length;i++){
+            sum = sum+nums[i];
+            if(sum == k){
+                maxlen = i+1;
+            }
+            int rem = sum - k;
+            if(map.containsKey(rem)){
+                int len = i-map.get(rem);
+                maxlen = Math.max(maxlen,len);
+            }
+            if(map.containsKey(sum)==false){
+                map.put(sum,i);
+            }
+
+        }
+        return maxlen;
+
+    }
 }
+
