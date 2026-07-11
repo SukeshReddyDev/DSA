@@ -6,7 +6,10 @@ public class majority1 {
 
         int res = sorting(nums);
         int res1 = sorting1(nums);
+        int res2 = sorting2(nums);
         System.out.println(res);
+        System.out.println(res1);
+        System.out.println(res2);
     }
     static int sorting(int[] nums){
         for(int i=0;i<nums.length;i++){
@@ -43,4 +46,26 @@ public class majority1 {
         return -1;
 
     }
+
+    static int sorting2(int[] nums) {
+
+    int ele = 0;
+    int c = 0;
+
+    for (int i = 0; i < nums.length; i++) {
+
+        if (c == 0) {
+            ele = nums[i];
+            c = 1;
+        }
+        else if (nums[i] == ele) {
+            c++;
+        }
+        else {
+            c--;
+        }
+    }
+
+    return ele;
+}
 } 
