@@ -18,5 +18,16 @@ public class stock{
         }
         System.out.println(maxprofit);
     }
+
+     static void maxsum1(int[] nums) {
+        int minval = Integer.MAX_VALUE;
+        int maxprofit = 0;
+        for(int i=0;i<nums.length;i++){
+            minval = Math.min(minval,nums[i]);
+            int profit = nums[i]-minval;
+            maxprofit = Math.max(maxprofit,profit);
+        }
+        System.out.println(maxprofit);
+    }
 }
 
