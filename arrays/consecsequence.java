@@ -6,6 +6,8 @@ public class consecsequence{
         System.out.println(res);
         int res1 = consec1(nums);
         System.out.println(res1);
+        int res2 = consec1(nums);
+        System.out.println(res2);
 
 
     }
@@ -13,7 +15,7 @@ public class consecsequence{
         int largest = 1;
         for(int i=0;i<nums.length;i++){
             int x = nums[i];
-            int ctr = 1;
+            int ctr = 1; 
             while(ls(nums,x+1)==true){
                 x=x+1;
                 ctr = ctr+1;
@@ -53,6 +55,31 @@ public class consecsequence{
                 ls=nums[i];
             }
             longest = Math.max(longest,cou);
+        }
+        return longest;
+    }
+
+
+    //optimal approach
+    static int consec2(int[] nums) {
+        if(nums.length == 0){
+            return 0;
+        }
+        HashSet<Integer> set = new HashSet<>();
+        for(int num :nums){
+            set.add(num);
+        }
+        int longest = 1;
+        for(int num: set){
+            if(set.contains(num-1)==false){
+                int current = num;
+                int cou = 1;
+                while(set.contains(current+1)){
+                    current += 1;
+                    cou = cou+1;
+                }
+                longest = Math.max(longest,cou);
+            }
         }
         return longest;
     }
