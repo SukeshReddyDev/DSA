@@ -4,6 +4,8 @@ public class rotatematrix{
         int[][] matrix = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
         int[][] res = rotatematrix(matrix);
         System.out.println(Arrays.deepToString(res));
+        int[][] res1 = rotatematrix(matrix);
+        System.out.println(Arrays.deepToString(res1));
 
 
 
@@ -17,6 +19,31 @@ public class rotatematrix{
             }
         }
         return ans;
+
+    }
+
+    // oPTIMAL APPROACH
+    static int[][] rotatematrix1(int[][] matrix) {
+       int n = matrix.length;
+       for(int i=0;i<n-1;i++){
+           for(int j=i+1;j<n;j++){
+               int temp = matrix[i][j];
+               matrix[i][j] = matrix[j][i];
+               matrix[j][i] = temp;
+           }
+       }
+       for(int i=0;i<n;i++){
+           int left =0;
+           int right = n-1;
+           while(left < right){
+               int temp = matrix[i][left];
+               matrix[i][left] = matrix[i][right];
+               matrix[i][right] = temp;
+               left++;
+               right--;
+           }
+       }
+       return matrix;
 
     }
 }
