@@ -36,7 +36,7 @@ public class pascals {
         ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
         for (int i = 1; i <= row; i++) {
             ArrayList<Integer> list = new ArrayList<>();
-            int n = i - 1;
+            int n = row - 1;
             long value = 1;
             list.add(1);
             for (int j = 1; j <= n; j++) {
