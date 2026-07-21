@@ -1,3 +1,4 @@
+import java.util.*;
 public class pascals {
     public static void main(String[] args) {
        int row = 5;
@@ -29,5 +30,22 @@ public class pascals {
             ans = ans/i;
             System.out.print(ans+" ");
         }
+    }
+
+    static ArrayList<ArrayList<Integer>> count2(int row) {
+        ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
+        for (int i = 1; i <= row; i++) {
+            ArrayList<Integer> list = new ArrayList<>();
+            int n = i - 1;
+            long value = 1;
+            list.add(1);
+            for (int j = 1; j <= n; j++) {
+                value = value * (n - j + 1);
+                value = value / j;
+                list.add((int) value);
+            }
+            ans.add(list);
+        }
+        return ans;
     }
 }
