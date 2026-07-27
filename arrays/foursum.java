@@ -7,12 +7,12 @@ public class foursum{
         int[] nums = {1, 0, -1, 0, -2, 2};
         int target = 0;
 
-        List<List<Integer>> ans = fourSum(nums, target);
+        Set<List<Integer>> ans = fourSum(nums, target);
 
         System.out.println(ans);
     }
 
-    static List<List<Integer>> fourSum(int[] nums, int target) {
+    static Set<List<Integer>> fourSum(int[] nums, int target) {
 
         Set<List<Integer>> set = new HashSet<>();
 
@@ -42,6 +42,6 @@ public class foursum{
             }
         }
 
-        return new ArrayList<>(set);
+        return set;
     }
 }
