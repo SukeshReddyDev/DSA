@@ -44,4 +44,29 @@ public class mergearray{
 
     }
 
+    // Optimal approach
+
+    static void merge2(int[] nums1,int[] nums2){
+        int m = nums1.length;
+        int n  = nums2.length;
+        int left = m-1;
+        int right =0;
+        while(left>=0 && right < n){
+            if(nums1[left] > nums2[right]){
+                int temp = nums1[left];
+                nums1[left] = nums2[right];
+                nums2[right] = temp;
+                left--;
+                right++;
+            }
+            else{
+                break;
+            }
+        }
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        System.out.println(Arrays.toString(nums1));
+        System.out.println(Arrays.toString(nums2));
+    }
+
 }
