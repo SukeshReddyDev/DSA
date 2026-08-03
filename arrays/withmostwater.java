@@ -5,6 +5,8 @@ public class withmostwater{
         int[] nums={1,8,6,2,5,4,8,3,7};
         int ans = maxarea(nums);
         System.out.println(ans);
+        int ans1 = maxarea1(nums);
+        System.out.println(ans1);
 
     }
     static int maxarea(int[] nums){
@@ -15,6 +17,24 @@ public class withmostwater{
             for(int j=i+1;j<n;j++){
                 area = (j-1)*Math.min(nums[i],nums[j]);
                 maxi = Math.max(area,maxi);
+            }
+        }
+        return maxi;
+    }
+
+    static int maxarea1(int[] nums){
+        int n = nums.length;
+        int maxi=0;
+        int lp=0;
+        int rp = n-1;
+        while(lp<rp){
+            int area = 0;
+            area=(rp-lp)*Math.min(nums[lp],nums[rp]);
+            maxi=Math.max(area,maxi);
+            if(nums[lp]<nums[rp]){
+                lp++;
+            }else{
+                rp--;
             }
         }
         return maxi;
