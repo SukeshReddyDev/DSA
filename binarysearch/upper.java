@@ -1,22 +1,19 @@
-
-
-
-public class lower{
+public class upper{
     public static void main(String[] args){
-        int[] nums={3,5,8,15,19};
-        int x = 9;
-        int sol = lower(nums,x);
+        int[] nums={1,2,2,3};
+        int x = 2;
+        int sol = upper(nums,x);
         System.out.println(sol);
 
     }
-    static int lower(int[] nums,int x){
+    static int upper(int[] nums,int x){
         int ans = nums.length;
         int n = nums.length;
         int low = 0;
         int high = n-1;
         while(low <= high){
             int mid = low + (high-low)/2;
-            if(nums[mid] >= x){
+            if(nums[mid] > x){
                 ans = mid;
                 high = mid-1;
             }
