@@ -1,16 +1,16 @@
 import java.util.*;
 
 
-public class floorceil{
+public class firstlast{
     public static void main(String[] args){
-        int[] nums={3, 4, 4, 7, 8, 10};
-        int x = 5;
+        int[] nums={5,7,7,8,8,10};
+        int x = 6;
         int[] res = res(nums,x);
         System.out.println(Arrays.toString(res));
 
     }
     static int[] res(int[] nums,int target){
-       int first = -1;
+        int first = -1;
         int last = -1;
 
         // Find first occurrence
