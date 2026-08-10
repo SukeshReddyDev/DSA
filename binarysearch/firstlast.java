@@ -9,6 +9,34 @@ public class firstlast{
         System.out.println(Arrays.toString(res));
 
     }
+
+    // Brute force approach
+    static int[] res1(int[] nums,int target){
+        int n = nums.length;
+        int low =0;
+        int high = n-1;
+        int first = -1;
+        int last = -1;
+        for(int i=0;i<n;i++){
+            if(nums[i] == target){
+                if(first == -1){
+                    first = i;
+                    last = i;
+                }
+                else{
+                    last =i;
+                }
+            }
+        }
+        return new int[]{first,last};
+
+
+    }
+
+
+
+
+    // Optimal approach
     static int[] res(int[] nums,int target){
         int first = -1;
         int last = -1;
