@@ -84,47 +84,6 @@ public class firstlast{
         return new int[]{first, last};
 
     }
-    // Optimal approach
     
-    static int count(int[] nums,int target){
-        int first = -1;
-        int last = -1;
-        int low = 0;
-        int high = nums.length - 1;
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            if (nums[mid] == target) {
-                first = mid;
-                high = mid - 1;       // search left
-            }
-            else if (nums[mid] < target) {
-                low = mid + 1;        // search right
-            }
-            else {
-                high = mid - 1;       // search left
-            }
-        }
-
-        low = 0;
-        high = nums.length - 1;
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            if (nums[mid] == target) {
-                last = mid;
-                low = mid + 1;        // search right
-            }
-            else if (nums[mid] < target) {
-                low = mid + 1;        // search right
-            }
-            else {
-                high = mid - 1;       // search left
-            }
-        }
-        if(first == -1){
-            return 0;
-        }
-        return last-first+1;
-
-    }
 
 }
