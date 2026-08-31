@@ -18,6 +18,24 @@ public class koko{
 
     }
 
+    //Optimal Solution 
+    static int min2(int[] nums,int h){
+        int low = 1;
+        int high = max(nums);
+        int ans = Integer.MIN_VALUE;
+        while(low<=high){
+            int mid = (low+high)/2;
+            int reqtime = fun(nums,mid);
+            if(reqtime<=h){
+                ans = mid;
+                high = mid-1;
+            }else{
+                low = mid+1;
+            }
+        }
+        return ans;
+    }
+
 
     static int fun(int[] nums,int mid){
         int tothours = 0;
