@@ -6,6 +6,9 @@ public class koko{
         System.out.println(ans);
     }
 
+    //we have to find the min banans that the koko can eat 
+    // so that it complete all the bananas in pile with given time
+
     static int min(int[] nums,int h){
         int n = max(nums);
         for(int i=1;i<n;i++){
