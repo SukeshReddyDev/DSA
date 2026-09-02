@@ -10,20 +10,33 @@ public class mindays{
         System.out.println(ans);
     }
 
+
+    
+
     static int minday(int[] nums,int m,int k){
 
         long flower = m*k;
         if(flower>nums.length){
             return -1;
         }
-        for(int i=min(nums);i<=max(nums);i++){
-            if(func(nums,i,m,k)==true){
-                return i;
+        int low = min(nums);
+        int high=max(nums);
+        int ans = 0;
+        while(low<=high){
+            int mid = (low+high)/2;
+            if(func(nums,mid,m,k) == true){
+                ans = mid;
+                high = mid-1;
+            }
+            else{
+                low = mid+1;
             }
         }
-        return -1;
+        return ans;
 
     }
+
+
 
     static boolean func(int[] nums,int days,int m,int k){
 
