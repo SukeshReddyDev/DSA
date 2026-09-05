@@ -21,6 +21,24 @@ public class aggressivecows{
 
     }
 
+    static int maxmin2(int[] nums,int k){
+        Arrays.sort(nums);
+        int ans =-1;
+        int low = 0;
+        int high = max(nums)-min(nums);
+        while(low<=high){
+            int mid = low +(high-low)/2;
+            if(func(nums,k,mid)==true){
+                ans = mid;
+                low = mid+1;
+            }else{
+                high = mid-1;
+            }
+        }
+        return ans;
+
+    }
+
     static boolean func(int[] nums,int k,int dis){
         int cntcow = 1;
         int last = nums[0];
