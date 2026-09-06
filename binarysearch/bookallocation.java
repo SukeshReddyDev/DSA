@@ -22,6 +22,29 @@ public class bookallocation{
 
     }
 
+    static int maxmin2(int[] nums,int stu){
+        if(stu > nums.length){
+            return -1;
+        }
+        int low = max(nums);
+        int high = sum(nums);
+        int ans = -1;
+        while(low<=high){
+            int mid = low + (high-low)/2;
+            int stud = fun(nums,mid);
+            if(stud > stu){
+                low = mid+1;
+
+            }else{
+                ans = mid;
+                high = mid-1;
+            }
+        }
+        return ans;
+
+    }
+
+
     static int fun(int[] nums,int maxpages){
         int student = 1;
         int pages = 0;
