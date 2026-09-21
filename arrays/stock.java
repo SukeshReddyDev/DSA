@@ -1,7 +1,7 @@
 public class stock{
     public static void main(String[] args) {
         int[] nums = {10,7,5,8,11,9};
-        maxsum(nums);
+        maxsum(nums); 
 
 
 
